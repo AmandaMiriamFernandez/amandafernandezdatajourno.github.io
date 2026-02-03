@@ -1,173 +1,119 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amanda Fernandez</title>
-  <meta name="description" content="Amanda Fernandez — Data Journalism at Columbia Journalism School." />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <style>
-    /* =========================
-       EDIT THESE (easy controls)
-       ========================= */
-    :root {
-      --bg: #0b0b0b;            /* page background */
-      --text: #cfcfcf;          /* main text color */
-      --heading: #ffffff;       /* headings */
-      --link: #7dd3fc;          /* link color */
-      --link-hover: #a78bfa;    /* link hover color */
-      --card-border: #2a2a2a;   /* article card border */
-      --card-bg: #111111;       /* article card background */
+    <title>Amanda Fernandez - Data Journalist</title>
 
-      --page-top: 80px;         /* space above content */
-      --section-gap: 22px;      /* space between sections */
-      --card-gap: 18px;         /* space between cards */
-      --card-padding: 16px;     /* padding inside cards */
-      --max-width: 520px;       /* content width */
-    }
+    <meta
+      name="description"
+      content="Data journalist in the making! Learning to code and documenting my data projects along the way."
+    />
 
-    /* =========================
-       Base layout + typography
-       ========================= */
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-                   "Liberation Mono", "Courier New", monospace;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.45;
-    }
+    <meta property="og:title" content="Amanda Fernandez - Data Journalist" />
+    <meta
+      property="og:description"
+      content="Data journalist in the making! Learning to code and documenting my data projects along the way."
+    />
+    <meta property="og:url" content="https://amandafernandez.com" />
+    <meta property="og:site_name" content="Amanda Fernandez" />
 
-    main {
-      margin: var(--page-top) auto;
-      width: min(var(--max-width), 90vw);
-    }
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Amanda Fernandez - Data Journalist" />
+    <meta
+      name="twitter:description"
+      content="Data journalist in the making! Learning to code and documenting my data projects along the way."
+    />
 
-    h1 {
-      font-size: 18px;
-      font-weight: 400;
-      margin: 0 0 var(--section-gap) 0;
-    }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    h1 strong {
-      color: var(--heading);
-      font-weight: 700;
-    }
+    <style>
+      body {
+        font-family: 'JetBrains Mono', monospace;
+      }
+    </style>
+  </head>
 
-    h2 {
-      font-size: 22px;
-      color: var(--heading);
-      margin: calc(var(--section-gap) * 1.2) 0 var(--section-gap) 0;
-      font-weight: 700;
-    }
+  <body class="antialiased bg-black">
 
-    /* =========================
-       Links
-       ========================= */
-    a {
-      color: var(--link);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+    <main class="my-20 grid justify-center font-mono text-gray-400">
+      <div class="space-y-5" style="width: min(28rem, 90vw)">
+        <p class="leading-loose text-justify text-lg text-gray-300">
+          <span class="font-bold">Hi I'm Amanda!</span>
+          A Data Journalist in the making!
+          I am learning how to <code class="text-cyan-500">&lt;code/&gt;</code> so welcome to my chaotic and boring website, where I document my data projects and a bunch of other stuff.
+          Feel free to reach out if something is broken, advise, roast, tell me how bad my projects are and what you would do differently!
+        </p>
 
-    a:hover {
-      color: var(--link-hover);
-    }
+        <div class="pt-9 flex gap-8 justify-center">
+          <a class="underline" href="https://x.com/AmandaMiriamR">Twitter</a>
+          <a class="underline" href="https://www.linkedin.com/in/amanda-fernandez-b0356a250/">LinkedIn</a>
+          <a class="underline" href="https://www.instagram.com/22.amanda_/">Instagram</a>
+          <a class="underline" href="mailto:rmf2196@columbia.edu">Email</a>
+        </div>
 
-    /* =========================
-       Lists / sections
-       ========================= */
-    .link-list > div {
-      margin: 6px 0;
-    }
+        <h2 class="text-2xl text-gray-300 pt-8 text-center">Articles</h2>
 
-    /* =========================
-       Article cards
-       ========================= */
-    .cards {
-      display: grid;
-      gap: var(--card-gap);
-    }
+        <div class="space-y-10">
+          <a
+            class="block space-y-4 rounded-md p-4 outline-1 outline-gray-500 hover:outline"
+            href="https://www.thehindu.com/data/india-is-getting-complacent-in-its-fight-against-polio-data/article68578333.ece"
+            target="_blank"
+          >
+            <img
+              alt="India is getting complacent in its fight against polio: Data"
+              src="IMG_6678_27_2_2022_20_50_2_1_MFD7PE38.jpg"
+              class="h-auto w-full rounded"
+            />
+            <div class="text-gray-300">India is getting complacent in its fight against polio: Data - The Hindu</div>
+          </a>
 
-    .card {
-      display: block;
-      padding: var(--card-padding);
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      background: var(--card-bg);
-      text-decoration: none;
-      color: var(--text);
-    }
+          <a
+            class="block space-y-4 rounded-md p-4 outline-1 outline-gray-500 hover:outline"
+            href="https://www.thehindu.com/data/defying-odds-more-girls-enter-mechanical-civil-marine-and-mining-engineering-courses/article68577023.ece"
+            target="_blank"
+          >
+            <img
+              alt="Defying odds, more girls enter mechanical, civil, marine and mining engineering courses"
+              src="engineering-graph.png"
+              class="h-auto w-full rounded"
+            />
+            <div class="text-gray-300">Defying odds, more girls enter mechanical, civil, marine and mining engineering courses: Data - The Hindu</div>
+          </a>
 
-    .card:hover {
-      border-color: var(--link-hover);
-    }
+          <a
+            class="block space-y-4 rounded-md p-4 outline-1 outline-gray-500 hover:outline"
+            href="https://www.thehindu.com/data/haryana-and-punjab-always-dominate-indias-olympic-contingent-data/article68487299.ece"
+            target="_blank"
+          >
+            <img
+              alt="Haryana and Punjab always dominate India's Olympic contingent"
+              src="olympic.jpg"
+              class="h-auto w-full rounded"
+            />
+            <div class="text-gray-300">Haryana and Punjab always dominate India's Olympic contingent: Data - The Hindu</div>
+          </a>
 
-    .card-title {
-      margin-top: 12px;
-      font-size: 16px;
-      color: var(--heading);
-      text-decoration: none;
-    }
+          <a
+            class="block space-y-4 rounded-md p-4 outline-1 outline-gray-500 hover:outline"
+            href="https://thewire.in/education/autonomy-a-rating-fail-to-mask-the-crisis-facing-madras-university"
+            target="_blank"
+          >
+            <img
+              alt="Autonomy, A++ Rating Fail to Mask the Crisis Facing Madras University"
+              src="madras.jpg"
+              class="h-auto w-full rounded"
+            />
+            <div class="text-gray-300">Autonomy, A++ Rating Fail to Mask the Crisis Facing Madras University - The Wire</div>
+          </a>
+        </div>
 
-    .thumb {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-    }
-
-    /* Small footer */
-    footer {
-      margin-top: 40px;
-      opacity: 0.7;
-      font-size: 12px;
-    }
-  </style>
-</head>
-
-<body>
-  <main>
-    <h1>
-      <strong>Amanda Fernandez</strong> is a data journalism student at Columbia Journalism School.
-      She builds data-driven stories, scrapes public datasets, and likes making clean, readable visuals.
-    </h1>
-
-    <!-- Social / links -->
-    <div class="link-list" aria-label="Links">
-      <div><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a></div>
-      <div><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
-      <div><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></div>
-    </div>
-
-    <h2>Articles</h2>
-
-    <!-- Article cards -->
-    <div class="cards">
-      <a class="card" href="#" target="_blank" rel="noopener noreferrer">
-        <img class="thumb" src="https://via.placeholder.com/800x450.png?text=Thumbnail" alt="Article thumbnail" />
-        <div class="card-title">Clean Power Isn’t Reaching Those Who Need It Most</div>
-      </a>
-
-      <a class="card" href="#" target="_blank" rel="noopener noreferrer">
-        <img class="thumb" src="https://via.placeholder.com/800x450.png?text=Thumbnail" alt="Article thumbnail" />
-        <div class="card-title">Unvaccinated Covid Patients Push Hospital Systems Past the Brink</div>
-      </a>
-
-      <a class="card" href="#" target="_blank" rel="noopener noreferrer">
-        <div class="card-title">Go Deeper</div>
-      </a>
-    </div>
-
-    <footer>
-      © <span id="year"></span> Amanda Fernandez
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+        <p class="text-center text-gray-500 text-sm mt-20">Powered by caffeine and nicotine!</p>
+      </div>
+    </main>
+  </body>
 </html>
