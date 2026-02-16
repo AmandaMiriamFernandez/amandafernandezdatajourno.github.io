@@ -29,24 +29,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
       body {
-        font-family: 'JetBrains Mono', monospace;
+        font-family: 'Inconsolata', monospace;
+        font-size: 18px;
+      }
+      #particles-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.6;
+      }
+      main {
+        position: relative;
+        z-index: 1;
       }
     </style>
   </head>
 
   <body class="antialiased bg-black">
 
-    <main class="my-20 grid justify-center font-mono text-gray-400">
-      <div class="space-y-5" style="width: min(28rem, 90vw)">
+    <main class="my-20 grid justify-center text-gray-400">
+      <div class="space-y-5" style="width: min(72rem, 90vw)">
         <p class="leading-loose text-justify text-lg text-gray-300">
-          <span class="font-bold">Hi I'm Amanda!</span>
-          A Data Journalist in the making!
-          I am learning how to <code class="text-cyan-500">&lt;code/&gt;</code> so welcome to my chaotic and boring website, where I document my data projects and a bunch of other stuff.
-          Feel free to reach out if something is broken, advise, roast, tell me how bad my projects are and what you would do differently!
+          <span class="font-bold">Hello, world! I'm Amanda,</span>
+          a journalist learning to code at Columbia Journalism School! I spend my days wrangling messy datasets, public records, and trying to turn spreadsheets into stories. This website is where I document my experiments, data projects and visualizations.
+        </p>
+        <p class="leading-loose text-justify text-lg text-gray-300">
+          If something looks broken, it probably is — and I'm probably fixing it. Feel free to say hi or send a gentle error report.
         </p>
 
         <div class="pt-9 flex gap-8 justify-center">
@@ -56,9 +71,9 @@
           <a class="underline" href="mailto:rmf2196@columbia.edu">Email</a>
         </div>
 
-        <h2 class="text-2xl text-gray-300 pt-8 text-center">Articles</h2>
+        <h2 class="text-xl text-gray-300 pt-8 text-center">Articles</h2>
 
-        <div class="space-y-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <a
             class="block space-y-4 rounded-md p-4 outline-1 outline-gray-500 hover:outline"
             href="https://www.thehindu.com/data/india-is-getting-complacent-in-its-fight-against-polio-data/article68578333.ece"
@@ -69,7 +84,7 @@
               src="IMG_6678_27_2_2022_20_50_2_1_MFD7PE38.jpg"
               class="h-auto w-full rounded"
             />
-            <div class="text-gray-300">India is getting complacent in its fight against polio: Data - The Hindu</div>
+            <div class="text-gray-300 text-base">India is getting complacent in its fight against polio: Data - The Hindu</div>
           </a>
 
           <a
@@ -82,7 +97,7 @@
               src="engineering-graph.png"
               class="h-auto w-full rounded"
             />
-            <div class="text-gray-300">Defying odds, more girls enter mechanical, civil, marine and mining engineering courses: Data - The Hindu</div>
+            <div class="text-gray-300 text-base">Defying odds, more girls enter mechanical, civil, marine and mining engineering courses: Data - The Hindu</div>
           </a>
 
           <a
@@ -95,7 +110,7 @@
               src="olympic.jpg"
               class="h-auto w-full rounded"
             />
-            <div class="text-gray-300">Haryana and Punjab always dominate India's Olympic contingent: Data - The Hindu</div>
+            <div class="text-gray-300 text-base">Haryana and Punjab always dominate India's Olympic contingent: Data - The Hindu</div>
           </a>
 
           <a
@@ -108,9 +123,72 @@
               src="madras.jpg"
               class="h-auto w-full rounded"
             />
-            <div class="text-gray-300">Autonomy, A++ Rating Fail to Mask the Crisis Facing Madras University - The Wire</div>
+            <div class="text-gray-300 text-base">Autonomy, A++ Rating Fail to Mask the Crisis Facing Madras University - The Wire</div>
           </a>
         
     </main>
+    <canvas id="particles-canvas"></canvas>
+    <script>
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const count = 80;
+
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2 + 1,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5,
+          opacity: Math.random() * 0.5 + 0.2
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (const p of particles) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255, 255, 255, ' + p.opacity + ')';
+          ctx.fill();
+
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        }
+
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = 'rgba(255, 255, 255, ' + (0.15 - dist / 800) + ')';
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    </script>
   </body>
 </html>
